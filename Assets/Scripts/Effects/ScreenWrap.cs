@@ -6,18 +6,8 @@ public class ScreenWrap : MonoBehaviour
 {
     public float padding = 1f;
     public Color debugColor = Color.blue;
-
-    private SpriteRenderer spriteRenderer; // Reference to sprite renderer
-    
-    // Awake runs before Start
-    void Awake()
-    {
-        // Get reference to sprite renderer
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-        
     // Draws Gizmos for debugging
-    void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
         // Get the bounds around the camers with given padding
         Bounds camBounds = Camera.main.GetBounds(padding);
@@ -25,7 +15,7 @@ public class ScreenWrap : MonoBehaviour
         Gizmos.color = debugColor;
         Gizmos.DrawWireCube(camBounds.center, camBounds.size);
     }
-
+    
     // Updates position of entity (GameObject this script is attached to)
     void UpdatePosition()
     {

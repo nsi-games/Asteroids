@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public static class Utility
+public static class BoundsExtensions
 {
     // Calculates and returns camera bounds with given padding (default to 1f)
     public static Bounds GetBounds(this Camera cam, float padding = 1f)
