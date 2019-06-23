@@ -8,13 +8,27 @@ public class Player : MonoBehaviour
 
     public float movementSpeed = 10f; // Movement in units (force to apply)
     public float rotationSpeed = 360f; // Rotation in degrees (per second)
-    private Rigidbody2D rigid; // Reference to rigidbody
 
-    // Use this for initialization
-    void Start()
+    public float respawnDelay = 3f;
+
+    private Animator anim;
+    private Rigidbody2D rigid; // Reference to rigidbody
+    private bool isDead = false;
+
+    private Vector3 startingPosition;
+
+    void Awake()
     {
         // Get reference to rigidbody
         rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
+
+    // Use this for initialization
+    void Start()
+    {        
+        // Record the starting position
+        startingPosition = transform.position;
     }
 
     // Control is a custom made function to handle movement + rotation
@@ -66,9 +80,40 @@ public class Player : MonoBehaviour
         bullet.Fire(transform.up);
     }
 
+    IEnumerator Died()
+    {
+        // Dead!
+        isDead = true;
+
+        // Move Player to starting position
+        transform.position = startingPosition;
+
+        // Start flashing the player
+        anim.SetBool("IsDead", true);
+
+        yield return new WaitForSeconds(respawnDelay);
+
+        // Stop flashing
+        anim.SetBool("IsDead", false);
+
+        // Alive!
+        isDead = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (isDead)
+            return;
+
         Control();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Asteroid")
+        {
+            StartCoroutine(Died());
+        }
     }
 }

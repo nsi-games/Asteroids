@@ -17,15 +17,6 @@ public class AsteroidManager : MonoBehaviour
     public float spawnRate = 1f; // Rate of spawn
     public float spawnPadding = 2f; // Padding to spawn
 
-    [Header("Debugging")]
-    public Color debugColor = Color.cyan;
-    void OnDrawGizmosSelected()
-    {
-        Bounds camBounds = Camera.main.GetBounds(spawnPadding);
-        Gizmos.color = debugColor;
-        Gizmos.DrawWireCube(camBounds.center, camBounds.size);
-    }
-    
     // Use this for initialization
     void Start()
     {
@@ -67,5 +58,18 @@ public class AsteroidManager : MonoBehaviour
         string asteroidName = prefab.name + Random.Range(0, 2).ToString();
         string path = "Sprites/Asteroids/" + asteroidName;
         asteroid.Sprite = Resources.Load<Sprite>(path);
+
+        // Fire out Asteroids
+        asteroid.Fire(Random.insideUnitCircle * maxVelocity);
     }
+
+    #region Debugging
+    public Color debugColor = Color.cyan;
+    void OnDrawGizmosSelected()
+    {
+        Bounds camBounds = Camera.main.GetBounds(spawnPadding);
+        Gizmos.color = debugColor;
+        Gizmos.DrawWireCube(camBounds.center, camBounds.size);
+    }
+    #endregion
 }

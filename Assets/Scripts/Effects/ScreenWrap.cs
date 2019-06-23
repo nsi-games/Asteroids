@@ -5,17 +5,7 @@ using UnityEngine;
 public class ScreenWrap : MonoBehaviour
 {
     public float padding = 1f;
-    public Color debugColor = Color.blue;
-    // Draws Gizmos for debugging
-    void OnDrawGizmosSelected()
-    {
-        // Get the bounds around the camers with given padding
-        Bounds camBounds = Camera.main.GetBounds(padding);
-        // Then Draw the Camera Bounds
-        Gizmos.color = debugColor;
-        Gizmos.DrawWireCube(camBounds.center, camBounds.size);
-    }
-    
+
     // Updates position of entity (GameObject this script is attached to)
     void UpdatePosition()
     {
@@ -57,4 +47,17 @@ public class ScreenWrap : MonoBehaviour
         // Update the player's position
         UpdatePosition();
     }
+
+    #region Debugging
+    public Color debugColor = Color.blue;
+    // Draws Gizmos for debugging
+    void OnDrawGizmosSelected()
+    {
+        // Get the bounds around the camers with given padding
+        Bounds camBounds = Camera.main.GetBounds(padding);
+        // Then Draw the Camera Bounds
+        Gizmos.color = debugColor;
+        Gizmos.DrawWireCube(camBounds.center, camBounds.size);
+    }
+    #endregion
 }

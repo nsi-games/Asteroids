@@ -179,52 +179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3267579281505561457, guid: a2e48abd05cde1b4ab907fd44a62c409,
+    - target: {fileID: 3267579282008153256, guid: a2e48abd05cde1b4ab907fd44a62c409,
         type: 3}
-      propertyPath: onAsteroidDestroyed.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3267579281505561457, guid: a2e48abd05cde1b4ab907fd44a62c409,
-        type: 3}
-      propertyPath: onAsteroidDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3267579281505561457, guid: a2e48abd05cde1b4ab907fd44a62c409,
-        type: 3}
-      propertyPath: onAsteroidDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3267579281505561457, guid: a2e48abd05cde1b4ab907fd44a62c409,
-        type: 3}
-      propertyPath: onAsteroidDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7318703262624306404}
-    - target: {fileID: 3267579281505561457, guid: a2e48abd05cde1b4ab907fd44a62c409,
-        type: 3}
-      propertyPath: onAsteroidDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddScore
-      objectReference: {fileID: 0}
-    - target: {fileID: 3267579281505561457, guid: a2e48abd05cde1b4ab907fd44a62c409,
-        type: 3}
-      propertyPath: onAsteroidDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3267579281505561457, guid: a2e48abd05cde1b4ab907fd44a62c409,
-        type: 3}
-      propertyPath: onAsteroidDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e48abd05cde1b4ab907fd44a62c409, type: 3}
---- !u!114 &7318703262624306404 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7318703262624306404, guid: a2e48abd05cde1b4ab907fd44a62c409,
-    type: 3}
-  m_PrefabInstance: {fileID: 3267579281452718156}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bdc02aea2834ed4bb4ed6aab604bbf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

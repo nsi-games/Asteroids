@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3973218817518629938}
   - component: {fileID: 3973218817518629937}
   - component: {fileID: 3973218817518629936}
+  - component: {fileID: 5918556737888104164}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -93,7 +94,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -136,6 +137,7 @@ MonoBehaviour:
     type: 3}
   movementSpeed: 10
   rotationSpeed: 360
+  respawnDelay: 3
 --- !u!114 &3973218817518629936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +152,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   padding: 1
   debugColor: {r: 0, g: 0, b: 1, a: 1}
+--- !u!95 &5918556737888104164
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973218817518629942}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dda54a96b2085dc4d8233bc7a978bc6e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

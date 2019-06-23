@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 114748179271619456}
   m_Layer: 0
   m_Name: Medium
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,5 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidPiece: {fileID: 1747446867559738, guid: 19e9cc7aa992bed4eb724172714697f4,
     type: 3}
+  scoreValue: 1
   spawnAmount: 4
   maxVelocity: 3

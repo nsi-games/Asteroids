@@ -35,9 +35,6 @@ public class Asteroid : MonoBehaviour
         // Destroy self
         Destroy(gameObject);
 
-        // Add score to GameManager
-        GameManager.Instance.AddScore(scoreValue);
-
         // If an asteroid piece is assigned
         if (asteroidPiece)
         {
@@ -47,6 +44,11 @@ public class Asteroid : MonoBehaviour
                 // Spawn that piece
                 AsteroidManager.Instance.Spawn(asteroidPiece, transform.position);
             }
+        }
+        else
+        {
+            // Add score to GameManager
+            GameManager.Instance.AddScore(scoreValue);
         }
     }
 }

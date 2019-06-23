@@ -4,15 +4,7 @@ using System.Collections;
 public class DestroyOutOfBorder : MonoBehaviour
 {
     public float padding = 10f;
-    public Color debugColor = Color.red;
-
-    void OnDrawGizmos()
-    {
-        Bounds camBounds = Camera.main.GetBounds(padding);
-        Gizmos.color = debugColor;
-        Gizmos.DrawWireCube(camBounds.center, camBounds.size);
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -24,4 +16,14 @@ public class DestroyOutOfBorder : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    #region Debugging
+    public Color debugColor = Color.red;
+    void OnDrawGizmos()
+    {
+        Bounds camBounds = Camera.main.GetBounds(padding);
+        Gizmos.color = debugColor;
+        Gizmos.DrawWireCube(camBounds.center, camBounds.size);
+    }
+    #endregion
 }
